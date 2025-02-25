@@ -1,0 +1,264 @@
+:root {
+    --main-bg: #1a1a1a;
+    --paper: #f1ece3;
+    --accent: #8b7765;
+    --text: #dcd5c9;
+    --dark-accent: #523f31;
+    --light-accent: #c0b8ad;
+    --highlight: #e8d3c0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: var(--main-bg);
+    color: var(--text);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-left: 1px solid var(--dark-accent);
+    border-right: 1px solid var(--dark-accent);
+    min-height: 100vh;
+}
+
+header {
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-accent);
+    margin-bottom: 40px;
+    background-image: url('https://api.placeholder.com/400/320');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.85);
+    z-index: 1;
+}
+
+header * {
+    position: relative;
+    z-index: 2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 20px;
+    color: var(--highlight);
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--dark-accent);
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--light-accent);
+    margin-top: 30px;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--light-accent);
+    margin-bottom: 30px;
+}
+
+.social-links {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--accent);
+    font-size: 1.3rem;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--highlight);
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--highlight);
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.project {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted var(--dark-accent);
+}
+
+.project h3 {
+    margin-bottom: 10px;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.project-links a {
+    padding: 5px 10px;
+    background-color: var(--dark-accent);
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.project-links a:hover {
+    background-color: var(--accent);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.skill {
+    padding: 5px 12px;
+    background-color: var(--dark-accent);
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.education-item, .experience-item {
+    margin-bottom: 30px;
+}
+
+.institution {
+    font-weight: 600;
+    color: var(--light-accent);
+}
+
+.year {
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+.publication {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 3px solid var(--dark-accent);
+}
+
+.publication-title {
+    font-weight: 600;
+    color: var(--light-accent);
+}
+
+.publication-authors {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.publication-details {
+    font-size: 0.9rem;
+}
+
+blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    border-left: 4px solid var(--accent);
+    padding-left: 20px;
+    margin: 30px 0;
+    color: var(--light-accent);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--dark-accent);
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    header {
+        padding: 40px 0;
+    }
+}
