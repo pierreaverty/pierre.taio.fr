@@ -143,33 +143,154 @@ a:hover {
     gap: 40px;
 }
 
+/* Project Cards */
 .project {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px dotted var(--dark-accent);
+    padding: 20px;
+    border: 1px solid var(--dark-accent);
+    border-radius: 5px;
+    background-color: rgba(26, 26, 26, 0.5);
+    transition: transform 0.2s ease-in-out;
+    position: relative; /* For absolute positioning of badge */
 }
 
-.project h3 {
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project-header {
     margin-bottom: 10px;
+    padding-right: 80px; /* Make space for the badge */
+}
+
+.project-title {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.pinned-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 3px 7px;
+    background-color: var(--accent);
+    border-radius: 10px;
+    font-size: 0.7rem;
+    color: var(--main-bg);
+    font-weight: normal;
+    font-family: 'EB Garamond', serif;
+    line-height: 1;
+    z-index: 2;
+}
+
+.project-language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: var(--light-accent);
+    margin-bottom: 10px;
+    height: 20px; /* Fixed height */
+}
+
+.language-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.project-description {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.project-description p {
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    max-height: 4.8em; /* 3 lines at 1.6em line height */
+}
+
+.project-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    min-height: 20px;
+}
+
+.project-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--accent);
 }
 
 .project-links {
     display: flex;
     gap: 15px;
-    margin-top: 10px;
+    margin-top: auto;
 }
 
-.project-links a {
-    padding: 5px 10px;
+.project-links a, .no-demo {
+    flex: 1;
+    padding: 8px 10px;
     background-color: var(--dark-accent);
     border-radius: 3px;
     text-decoration: none;
     font-size: 0.9rem;
+    text-align: center;
     transition: background-color 0.3s;
 }
 
 .project-links a:hover {
     background-color: var(--accent);
+    text-decoration: none;
+}
+
+.no-demo {
+    visibility: hidden;
+}
+
+/* GitHub Projects Section Styles */
+.loading-projects {
+    padding: 20px;
+    text-align: center;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.view-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.view-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--dark-accent);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.9rem;
+}
+
+.view-more-button:hover {
+    background-color: var(--accent);
+    color: var(--text);
+    text-decoration: none;
 }
 
 .skills {
@@ -260,5 +381,25 @@ footer {
     
     header {
         padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .project {
+        padding: 15px;
+    }
+    
+    .pinned-badge {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-links a {
+        text-align: center;
     }
 }

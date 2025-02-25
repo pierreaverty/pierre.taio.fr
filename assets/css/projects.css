@@ -1,0 +1,161 @@
+/* Additional styles specific to the projects page */
+
+.back-to-home {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    background-color: var(--dark-accent);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.back-to-home:hover {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--dark-accent);
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.5);
+    transition: transform 0.2s;
+    position: relative; /* For absolute positioning of badge */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card .project-header {
+    margin-bottom: 10px;
+    padding-right: 80px; /* Make space for the badge */
+}
+
+.project-card .project-title {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.project-card .pinned-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 3px 7px;
+    background-color: var(--accent);
+    border-radius: 10px;
+    font-size: 0.7rem;
+    color: var(--main-bg);
+    font-weight: normal;
+    font-family: 'EB Garamond', serif;
+    line-height: 1;
+    z-index: 2;
+}
+
+.project-card .project-language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: var(--light-accent);
+    margin-bottom: 10px;
+    height: 20px; /* Fixed height */
+}
+
+.project-card .project-description {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.project-card .project-description p {
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    max-height: 4.8em; /* 3 lines at 1.6em line height */
+}
+
+.project-card .project-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    min-height: 20px;
+}
+
+.project-card .project-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--accent);
+}
+
+.project-card .project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.project-card .project-links a, .project-card .no-demo {
+    flex: 1;
+    padding: 8px 10px;
+    background-color: var(--dark-accent);
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.project-card .project-links a:hover {
+    background-color: var(--accent);
+    text-decoration: none;
+}
+
+.project-card .no-demo {
+    visibility: hidden;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        padding: 15px;
+    }
+    
+    .project-card .pinned-badge {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-links a {
+        text-align: center;
+    }
+}

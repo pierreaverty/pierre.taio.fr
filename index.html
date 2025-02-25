@@ -101,7 +101,7 @@
                 <h2>Research Experience</h2>
                 
                 <div class="experience-item">
-                    <h3>Master's Thesis: One-Shot Object Recognition for Digital Twins</h3>
+                    <h3>Master's Thesis: One-Shot Object Recognition techniques for Digital Twins</h3>
                     <div class="institution">Université Paris Cité & Universität Wien</div>
                     <div class="year">Feb 2024 - Jul 2024</div>
                     <ul>
@@ -149,29 +149,12 @@
         
         <section id="projects">
             <h2>Projects</h2>
-            
-            <div class="project">
-                <h3>OWLv2 Tuning Framework</h3>
-                <p>A PyTorch project focused on the fine-tuning of the OWLv2 model released by Google.</p>
-                <div class="project-links">
-                    <a href="https://github.com/pierreaverty/OWLv2-Tunning" target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
-                </div>
+            <div id="projects-container">
+                <!-- Projects will be loaded dynamically here -->
+                <div class="loading-projects">Loading projects from GitHub...</div>
             </div>
-            
-            <div class="project">
-                <h3>Semantic Annotations for Social Data</h3>
-                <p>Enhancing social data classification through semantic annotations.</p>
-                <div class="project-links">
-                    <a href="https://github.com/pierreaverty/TER_project" target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            
-            <div class="project">
-                <h3>Perceptron</h3>
-                <p>An implementation of a Perceptron from scratch with Julia.</p>
-                <div class="project-links">
-                    <a href="https://github.com/pierreaverty/perceptron" target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
-                </div>
+            <div class="view-more-container">
+                <a href="projects.html" id="view-more-projects" class="view-more-button">View All Projects</a>
             </div>
         </section>
         
@@ -249,5 +232,8 @@
     <footer>
         <p>© 2025 Pierre Averty. All rights reserved.</p>
     </footer>
+
+    <!-- GitHub Projects Script -->
+    <script src="./assets/js/github-projects.js"></script>
 </body>
 </html>
