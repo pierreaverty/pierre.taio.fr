@@ -1,4 +1,4 @@
-name: OVH SSH Deployment
+name: Mise à jour instantanée OVH
 on:
   push:
     branches: [main]
@@ -9,16 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build project
-        run: |
-          npm install
-          npm run build
-
-      - name: Deploy via SSH
+      - name: Transfert des fichiers
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.OVH_SSH_HOST }}
           username: ${{ secrets.OVH_SSH_USER }}
           key: ${{ secrets.OVH_SSH_KEY }}
-          source: "dist/*"
-          target: "/www/"
+          source: "."
+          target: "/www/pierre.taio.fr/"
+          strip_components: 1
+          rm: true
